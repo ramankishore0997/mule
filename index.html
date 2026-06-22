@@ -66,7 +66,15 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-
 
 /* Hero */
 #hero{position:relative;padding:100px 0 60px;text-align:center;z-index:1}
-.hero-logo{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;margin-bottom:40px;letter-spacing:-.02em;background:linear-gradient(135deg,#fff 0%,var(--blue2) 50%,var(--blue) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fadeInUp .8s ease-out}
+.hero-brand{position:relative;margin-bottom:48px;animation:fadeInUp 1s ease-out}
+.hero-brand-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:400px;background:radial-gradient(circle,rgba(59,130,246,.15) 0%,rgba(6,182,212,.1) 40%,transparent 70%);filter:blur(60px);animation:pulse-glow 6s ease-in-out infinite;pointer-events:none}
+.hero-logo-container{position:relative;display:inline-block}
+.hero-logo-icon{width:80px;height:80px;margin:0 auto 24px;position:relative}
+.hero-logo-icon svg{width:100%;height:100%;filter:drop-shadow(0 0 30px rgba(59,130,246,.4))}
+.hero-wordmark{position:relative}
+.hero-brand-primary{font-family:'Space Grotesk',sans-serif;font-size:clamp(56px,10vw,96px);font-weight:700;letter-spacing:.15em;line-height:1;background:linear-gradient(135deg,#fff 0%,var(--blue2) 40%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-shadow:0 0 60px rgba(59,130,246,.3);animation:gradient-shift 8s ease infinite;background-size:200% 200%}
+.hero-brand-secondary{font-family:'Inter',sans-serif;font-size:clamp(14px,2.5vw,24px);font-weight:500;letter-spacing:.4em;text-transform:uppercase;color:var(--text2);margin-top:8px;opacity:.8}
+@keyframes gradient-shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 .hero-title{font-size:clamp(40px,7vw,64px);line-height:1.1;margin-bottom:24px;letter-spacing:-.03em;animation:fadeInUp .8s ease-out .1s both}
 .hero-title .gradient{background:linear-gradient(135deg,var(--blue2),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-sub{font-size:18px;color:var(--text2);margin-bottom:40px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.7;animation:fadeInUp .8s ease-out .2s both}
@@ -150,7 +158,11 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-
 /* Mobile */
 @media(max-width:768px){
   #hero{padding:80px 0 48px}
-  .hero-logo{font-size:32px;margin-bottom:32px}
+  .hero-brand{margin-bottom:36px}
+  .hero-logo-icon{width:64px;height:64px;margin-bottom:20px}
+  .hero-brand-primary{font-size:clamp(48px,12vw,72px);letter-spacing:.12em}
+  .hero-brand-secondary{font-size:clamp(12px,3vw,18px);letter-spacing:.3em;margin-top:6px}
+  .hero-brand-glow{width:300px;height:300px}
   .hero-title{font-size:clamp(32px,8vw,48px);margin-bottom:20px}
   .hero-sub{font-size:16px;margin-bottom:32px}
   .btn-primary,.btn-whatsapp{width:100%;justify-content:center;padding:16px 36px;font-size:15px}
@@ -180,7 +192,11 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-
 @media(max-width:480px){
   .container{padding:0 20px}
   #hero{padding:60px 0 40px}
-  .hero-logo{font-size:28px}
+  .hero-brand{margin-bottom:32px}
+  .hero-logo-icon{width:56px;height:56px;margin-bottom:16px}
+  .hero-brand-primary{font-size:clamp(40px,14vw,56px);letter-spacing:.1em}
+  .hero-brand-secondary{font-size:clamp(11px,3.5vw,16px);letter-spacing:.25em;margin-top:4px}
+  .hero-brand-glow{width:240px;height:240px}
   .hero-title{font-size:clamp(28px,9vw,40px)}
   .hero-sub{font-size:15px}
   
@@ -211,7 +227,28 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-
 <!-- HERO -->
 <section id="hero">
 <div class="container">
-<div class="hero-logo">ADMIZ AGENCY</div>
+<div class="hero-brand">
+<div class="hero-brand-glow"></div>
+<div class="hero-logo-container">
+<div class="hero-logo-icon">
+<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+<stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+</linearGradient>
+</defs>
+<circle cx="40" cy="40" r="38" stroke="url(#logoGradient)" stroke-width="2" fill="rgba(59,130,246,0.05)"/>
+<path d="M40 15 L55 60 L48 60 L44 48 L36 48 L32 60 L25 60 Z M40 28 L37 42 L43 42 Z" fill="url(#logoGradient)"/>
+</svg>
+</div>
+<div class="hero-wordmark">
+<div class="hero-brand-primary">ADMIZ</div>
+<div class="hero-brand-secondary">Agency</div>
+</div>
+</div>
+</div>
 <h1 class="hero-title">META AGENCY<br><span class="gradient">AD ACCOUNT</span></h1>
 <p class="hero-sub">Watch our detailed video guide to learn how Meta Agency Ad Accounts work and how to get started.</p>
 <a href="#video-section" class="btn-primary">
