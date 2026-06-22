@@ -94,6 +94,14 @@ a{text-decoration:none;color:inherit}
 .video-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top,rgba(59,130,246,.04),transparent 60%)}
 .video-wrapper{position:relative;width:100%;padding-bottom:56.25%;border-radius:12px;overflow:hidden;background:#000;margin-bottom:32px}
 .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.video-thumbnail{position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;transition:transform .3s}
+.video-thumbnail:hover{transform:scale(1.02)}
+.thumbnail-img{width:100%;height:100%;object-fit:cover}
+.play-button-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3);transition:background .3s}
+.video-thumbnail:hover .play-button-overlay{background:rgba(0,0,0,.4)}
+.play-button{width:80px;height:80px;background:rgba(255,255,255,.95);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.play-button:hover{transform:scale(1.1);background:#fff}
+.play-button svg{color:var(--blue);margin-left:4px}
 .video-info{position:relative}
 .video-info-title{font-size:20px;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:10px}
 .video-info-title svg{width:24px;height:24px;color:var(--blue2)}
@@ -190,11 +198,103 @@ a{text-decoration:none;color:inherit}
 
 /* RESPONSIVE */
 @media(max-width:768px){
-  .hero-actions{flex-direction:column;align-items:center}
-  .btn-primary,.btn-secondary,.btn-whatsapp{width:100%;justify-content:center}
-  .footer-inner{flex-direction:column;text-align:center}
-  .video-card{padding:24px}
-  .whatsapp-card{padding:40px 24px}
+  .container{padding:0 20px}
+  #hero{padding:120px 0 60px}
+  .hero-title{font-size:clamp(32px,8vw,48px)}
+  .hero-sub{font-size:16px;margin-bottom:32px}
+  .hero-badge{font-size:12px;padding:7px 14px}
+  .hero-actions{flex-direction:column;align-items:center;gap:12px}
+  .btn-primary,.btn-secondary,.btn-whatsapp{width:100%;justify-content:center;padding:14px 28px;font-size:14px}
+  .hero-note{font-size:12px;margin-top:24px}
+  
+  #video-section{padding:60px 0}
+  .video-card{padding:20px;border-radius:16px}
+  .video-info-title{font-size:17px;flex-direction:column;align-items:flex-start;gap:8px}
+  .video-info-list{gap:8px}
+  .video-info-list li{font-size:14px}
+  .video-warning{padding:14px 16px;font-size:13px}
+  
+  #checkbox-section{padding:40px 0}
+  .checkbox-card{padding:28px 20px}
+  .checkbox-label{font-size:16px;gap:12px}
+  .checkbox-input{width:24px;height:24px}
+  .checkbox-hint{font-size:12px}
+  
+  #whatsapp-cta{padding:60px 0}
+  .whatsapp-card{padding:36px 24px;border-radius:16px}
+  .whatsapp-title{font-size:clamp(24px,6vw,32px)}
+  .whatsapp-sub{font-size:14px;margin-bottom:28px}
+  .whatsapp-disabled-msg{font-size:12px}
+  
+  #benefits{padding:60px 0}
+  .benefits-grid{grid-template-columns:1fr;gap:16px;margin-top:32px}
+  .benefit-card{padding:24px 20px}
+  .benefit-title{font-size:16px}
+  .benefit-desc{font-size:13px}
+  
+  #how-it-works{padding:60px 0}
+  .steps-grid{grid-template-columns:1fr;gap:16px;margin-top:32px}
+  .steps-grid::before{display:none}
+  .step-card{padding:20px 16px}
+  .step-num{width:44px;height:44px;font-size:16px}
+  .step-title{font-size:15px}
+  .step-desc{font-size:12px}
+  
+  #stats{padding:60px 0}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .stat-card{padding:28px 16px}
+  .stat-value{font-size:clamp(28px,7vw,36px)}
+  .stat-label{font-size:12px}
+  
+  #faq{padding:60px 0}
+  .faq-grid{margin-top:32px;gap:10px}
+  .faq-q{padding:16px 18px;font-size:14px}
+  .faq-icon{width:26px;height:26px;font-size:14px}
+  .faq-a p{font-size:13px}
+  
+  .section-title{font-size:clamp(26px,6vw,36px)}
+  .section-sub{font-size:14px}
+  .section-label{font-size:11px}
+  
+  .footer-inner{flex-direction:column;text-align:center;gap:16px}
+  .footer-links{flex-direction:column;gap:12px}
+  .footer-copy{font-size:12px}
+  
+  .sticky-cta{bottom:20px;right:20px}
+  .sticky-cta a{padding:12px 24px;font-size:13px}
+  .fab-whatsapp{bottom:20px;left:20px;width:52px;height:52px}
+  .fab-whatsapp svg{width:26px;height:26px}
+  
+  .play-button{width:64px;height:64px}
+  .play-button svg{width:36px;height:36px}
+}
+
+@media(max-width:480px){
+  .container{padding:0 16px}
+  #hero{padding:100px 0 50px}
+  .hero-title{font-size:clamp(28px,9vw,40px)}
+  .hero-sub{font-size:15px}
+  .hero-badge{font-size:11px;padding:6px 12px}
+  
+  .video-card{padding:16px}
+  .video-info-title{font-size:16px}
+  .video-info-list li{font-size:13px}
+  
+  .checkbox-card{padding:24px 16px}
+  .checkbox-label{font-size:15px}
+  
+  .whatsapp-card{padding:32px 20px}
+  .whatsapp-title{font-size:clamp(22px,7vw,28px)}
+  
+  .benefit-card{padding:20px 16px}
+  .benefit-icon{width:42px;height:42px;font-size:18px}
+  
+  .stat-card{padding:24px 12px}
+  
+  .faq-q{padding:14px 16px;font-size:13px}
+  
+  .play-button{width:56px;height:56px}
+  .play-button svg{width:32px;height:32px}
 }
 </style>
 </head>
@@ -239,8 +339,15 @@ a{text-decoration:none;color:inherit}
   <div class="container">
     <div class="video-container">
       <div class="video-card reveal">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/7hM2vMf0yJk" title="Meta Agency Ad Account Guide" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="video-wrapper" id="video-wrapper">
+          <div class="video-thumbnail" id="video-thumbnail">
+            <img src="https://img.youtube.com/vi/7hM2vMf0yJk/maxresdefault.jpg" alt="Meta Agency Ad Account Guide" class="thumbnail-img">
+            <div class="play-button-overlay">
+              <div class="play-button">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="video-info">
           <div class="video-info-title">
@@ -476,6 +583,20 @@ checkbox.addEventListener('change',function(){
     whatsappMsg.style.display='block';
     checkboxCard.classList.remove('active');
   }
+});
+
+// Video thumbnail click handler
+const videoThumbnail=document.getElementById('video-thumbnail');
+const videoWrapper=document.getElementById('video-wrapper');
+
+videoThumbnail.addEventListener('click',function(){
+  const iframe=document.createElement('iframe');
+  iframe.src='https://www.youtube.com/embed/7hM2vMf0yJk?autoplay=1';
+  iframe.title='Meta Agency Ad Account Guide';
+  iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  iframe.allowFullscreen=true;
+  videoWrapper.innerHTML='';
+  videoWrapper.appendChild(iframe);
 });
 
 // FAQ accordion
