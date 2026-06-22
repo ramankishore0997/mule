@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="ADMIZ AGENCY - Meta Agency Ad Account setup and business solutions. Watch our video guide and contact us on WhatsApp.">
+<meta name="description" content="ADMIZ AGENCY - Premium Meta Agency Ad Account solutions. Watch our video guide and contact us on WhatsApp.">
 <title>ADMIZ AGENCY - Meta Agency Ad Account</title>
 
 <!-- Meta Pixel Code -->
@@ -25,88 +25,112 @@ src="https://www.facebook.com/tr?id=4001075203519150&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#0a0e1a;
+  --bg:#050505;
   --blue:#3b82f6;--blue2:#60a5fa;--blue3:#2563eb;
-  --glass:rgba(255,255,255,.03);--glass-border:rgba(255,255,255,.08);
+  --cyan:#06b6d4;--indigo:#6366f1;
+  --glass:rgba(255,255,255,.03);--glass2:rgba(255,255,255,.05);
+  --glass-border:rgba(255,255,255,.08);
   --text:#e8eaf0;--text2:#8b92a8;--text3:#555e78;
   --green:#25D366;--green2:#128C7E;
 }
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
-.container{max-width:900px;margin:0 auto;padding:0 20px}
+.container{max-width:1000px;margin:0 auto;padding:0 24px}
+
+/* Background Effects */
+.bg-effects{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.15;animation:float 20s ease-in-out infinite}
+.orb-1{width:500px;height:500px;background:var(--blue);top:-10%;left:-10%;animation-delay:0s}
+.orb-2{width:400px;height:400px;background:var(--cyan);top:40%;right:-10%;animation-delay:7s}
+.orb-3{width:450px;height:450px;background:var(--indigo);bottom:-10%;left:30%;animation-delay:14s}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-30px) scale(1.1)}66%{transform:translate(-20px,20px) scale(.9)}}
+.grid-pattern{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black 20%,transparent 70%)}
+
+/* Typography */
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.02em}
 
 /* Buttons */
-.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:16px 40px;background:linear-gradient(135deg,var(--blue),var(--blue3));color:#fff;font-weight:600;font-size:16px;border-radius:60px;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 30px rgba(59,130,246,.3)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(59,130,246,.4)}
-.btn-whatsapp{display:inline-flex;align-items:center;gap:12px;padding:18px 48px;background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;font-weight:600;font-size:17px;border-radius:60px;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 30px rgba(37,211,102,.3)}
-.btn-whatsapp:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(37,211,102,.4)}
+.btn-primary{display:inline-flex;align-items:center;gap:12px;padding:18px 44px;background:linear-gradient(135deg,var(--blue),var(--blue3));color:#fff;font-weight:600;font-size:16px;border-radius:60px;border:none;cursor:pointer;transition:all .4s cubic-bezier(.4,0,.2,1);box-shadow:0 4px 30px rgba(59,130,246,.3),inset 0 1px 0 rgba(255,255,255,.1);position:relative;overflow:hidden}
+.btn-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.1),transparent);opacity:0;transition:opacity .4s}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(59,130,246,.5),inset 0 1px 0 rgba(255,255,255,.15)}
+.btn-primary:hover::before{opacity:1}
+.btn-whatsapp{display:inline-flex;align-items:center;gap:12px;padding:20px 52px;background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;font-weight:600;font-size:17px;border-radius:60px;border:none;cursor:pointer;transition:all .4s cubic-bezier(.4,0,.2,1);box-shadow:0 4px 30px rgba(37,211,102,.3),inset 0 1px 0 rgba(255,255,255,.1);position:relative;overflow:hidden}
+.btn-whatsapp::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.1),transparent);opacity:0;transition:opacity .4s}
+.btn-whatsapp:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(37,211,102,.5),inset 0 1px 0 rgba(255,255,255,.15)}
+.btn-whatsapp:hover::before{opacity:1}
 
 /* Hero */
-#hero{padding:80px 0 40px;text-align:center}
-.hero-logo{font-size:32px;font-weight:800;margin-bottom:32px;letter-spacing:-.02em}
-.hero-logo span{background:linear-gradient(135deg,var(--blue2),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-title{font-size:clamp(32px,6vw,52px);font-weight:800;line-height:1.1;margin-bottom:20px;letter-spacing:-.02em}
-.hero-sub{font-size:17px;color:var(--text2);margin-bottom:36px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6}
+#hero{position:relative;padding:100px 0 60px;text-align:center;z-index:1}
+.hero-logo{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;margin-bottom:40px;letter-spacing:-.02em;background:linear-gradient(135deg,#fff 0%,var(--blue2) 50%,var(--blue) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fadeInUp .8s ease-out}
+.hero-title{font-size:clamp(40px,7vw,64px);line-height:1.1;margin-bottom:24px;letter-spacing:-.03em;animation:fadeInUp .8s ease-out .1s both}
+.hero-title .gradient{background:linear-gradient(135deg,var(--blue2),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:18px;color:var(--text2);margin-bottom:40px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.7;animation:fadeInUp .8s ease-out .2s both}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
 /* Video Section */
-#video-section{padding:40px 0}
-.video-text{text-align:center;font-size:16px;color:var(--text2);margin-bottom:24px;font-weight:500}
-.video-wrapper{position:relative;width:100%;padding-bottom:56.25%;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+#video-section{position:relative;padding:60px 0;z-index:1}
+.video-card{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:24px;padding:40px;box-shadow:0 20px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);position:relative;overflow:hidden;animation:fadeInUp .8s ease-out .3s both}
+.video-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(59,130,246,.05),transparent);pointer-events:none}
+.video-text{text-align:center;font-size:17px;color:var(--text2);margin-bottom:32px;font-weight:500;position:relative}
+.video-wrapper{position:relative;width:100%;padding-bottom:56.25%;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 16px 48px rgba(0,0,0,.4);position:relative}
 .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
-.video-thumbnail{position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;transition:transform .3s}
+.video-thumbnail{position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;transition:transform .4s cubic-bezier(.4,0,.2,1)}
 .video-thumbnail:hover{transform:scale(1.02)}
 .thumbnail-img{width:100%;height:100%;object-fit:cover}
-.play-button-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3);transition:background .3s}
+.play-button-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3);transition:background .4s}
 .video-thumbnail:hover .play-button-overlay{background:rgba(0,0,0,.4)}
-.play-button{width:80px;height:80px;background:rgba(255,255,255,.95);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s;box-shadow:0 8px 32px rgba(0,0,0,.4)}
-.play-button:hover{transform:scale(1.1);background:#fff}
-.play-button svg{color:var(--blue);margin-left:4px}
+.play-button{width:88px;height:88px;background:rgba(255,255,255,.95);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .4s cubic-bezier(.4,0,.2,1);box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.play-button:hover{transform:scale(1.1);background:#fff;box-shadow:0 16px 48px rgba(59,130,246,.4)}
+.play-button svg{color:var(--blue);margin-left:6px}
 
 /* WhatsApp CTA */
-#whatsapp-cta{padding:48px 0;text-align:center}
-.whatsapp-text{font-size:18px;color:var(--text2);margin-bottom:28px;font-weight:500}
+#whatsapp-cta{position:relative;padding:80px 0;text-align:center;z-index:1}
+.whatsapp-text{font-size:19px;color:var(--text2);margin-bottom:36px;font-weight:500;animation:fadeInUp .8s ease-out .4s both}
 
 /* Footer */
-#footer{padding:32px 0 24px;border-top:1px solid var(--glass-border);text-align:center}
-.footer-links{display:flex;justify-content:center;gap:32px;margin-bottom:16px}
-.footer-links a{font-size:14px;color:var(--text3);transition:color .3s}
+#footer{position:relative;padding:48px 0 32px;border-top:1px solid var(--glass-border);text-align:center;z-index:1}
+.footer-links{display:flex;justify-content:center;gap:40px;margin-bottom:20px}
+.footer-links a{font-size:14px;color:var(--text3);transition:color .3s;font-weight:500}
 .footer-links a:hover{color:var(--text)}
 .footer-copy{font-size:13px;color:var(--text3)}
 
 /* Mobile */
 @media(max-width:768px){
-  #hero{padding:60px 0 32px}
-  .hero-logo{font-size:28px;margin-bottom:24px}
-  .hero-title{font-size:clamp(28px,7vw,40px);margin-bottom:16px}
-  .hero-sub{font-size:15px;margin-bottom:28px}
-  .btn-primary,.btn-whatsapp{width:100%;justify-content:center;padding:15px 32px;font-size:15px}
+  #hero{padding:80px 0 48px}
+  .hero-logo{font-size:32px;margin-bottom:32px}
+  .hero-title{font-size:clamp(32px,8vw,48px);margin-bottom:20px}
+  .hero-sub{font-size:16px;margin-bottom:32px}
+  .btn-primary,.btn-whatsapp{width:100%;justify-content:center;padding:16px 36px;font-size:15px}
   
-  #video-section{padding:32px 0}
-  .video-text{font-size:15px;margin-bottom:20px}
-  .play-button{width:64px;height:64px}
-  .play-button svg{width:36px;height:36px}
+  #video-section{padding:48px 0}
+  .video-card{padding:28px;border-radius:20px}
+  .video-text{font-size:15px;margin-bottom:24px}
+  .play-button{width:72px;height:72px}
+  .play-button svg{width:40px;height:40px}
   
-  #whatsapp-cta{padding:40px 0}
-  .whatsapp-text{font-size:16px;margin-bottom:24px}
+  #whatsapp-cta{padding:60px 0}
+  .whatsapp-text{font-size:16px;margin-bottom:28px}
   
-  .footer-links{flex-direction:column;gap:16px}
+  .footer-links{flex-direction:column;gap:20px}
+  .orb{opacity:.1}
 }
 
 @media(max-width:480px){
-  .container{padding:0 16px}
-  #hero{padding:50px 0 28px}
-  .hero-logo{font-size:26px}
-  .hero-title{font-size:clamp(26px,8vw,36px)}
-  .hero-sub{font-size:14px}
+  .container{padding:0 20px}
+  #hero{padding:60px 0 40px}
+  .hero-logo{font-size:28px}
+  .hero-title{font-size:clamp(28px,9vw,40px)}
+  .hero-sub{font-size:15px}
   
+  .video-card{padding:20px}
   .video-text{font-size:14px}
-  .play-button{width:56px;height:56px}
-  .play-button svg{width:32px;height:32px}
+  .play-button{width:64px;height:64px}
+  .play-button svg{width:36px;height:36px}
   
   .whatsapp-text{font-size:15px}
 }
@@ -114,56 +138,66 @@ a{text-decoration:none;color:inherit}
 </head>
 <body>
 
+<!-- Background Effects -->
+<div class="bg-effects">
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+<div class="grid-pattern"></div>
+</div>
+
 <!-- HERO -->
 <section id="hero">
-  <div class="container">
-    <div class="hero-logo">ADMIZ <span>AGENCY</span></div>
-    <h1 class="hero-title">Meta Agency Ad Account</h1>
-    <p class="hero-sub">Complete setup guide and business solutions. Watch our video to learn how Meta Agency Ad Accounts work and how to get started.</p>
-    <a href="#video-section" class="btn-primary">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-      WATCH VIDEO
-    </a>
-  </div>
+<div class="container">
+<div class="hero-logo">ADMIZ AGENCY</div>
+<h1 class="hero-title">META AGENCY<br><span class="gradient">AD ACCOUNT</span></h1>
+<p class="hero-sub">Watch our detailed video guide to learn how Meta Agency Ad Accounts work and how to get started.</p>
+<a href="#video-section" class="btn-primary">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+WATCH VIDEO
+</a>
+</div>
 </section>
 
 <!-- VIDEO SECTION -->
 <section id="video-section">
-  <div class="container">
-    <p class="video-text">Please watch the complete video before contacting us.</p>
-    <div class="video-wrapper" id="video-wrapper">
-      <div class="video-thumbnail" id="video-thumbnail">
-        <img src="https://img.youtube.com/vi/7hM2vMf0yJk/maxresdefault.jpg" alt="Meta Agency Ad Account Guide" class="thumbnail-img">
-        <div class="play-button-overlay">
-          <div class="play-button">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="video-card">
+<p class="video-text">Please watch the complete video before contacting us.</p>
+<div class="video-wrapper" id="video-wrapper">
+<div class="video-thumbnail" id="video-thumbnail">
+<img src="https://img.youtube.com/vi/7hM2vMf0yJk/maxresdefault.jpg" alt="Meta Agency Ad Account Guide" class="thumbnail-img">
+<div class="play-button-overlay">
+<div class="play-button">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <!-- WHATSAPP CTA -->
 <section id="whatsapp-cta">
-  <div class="container">
-    <p class="whatsapp-text">Ready to get started? Contact us on WhatsApp.</p>
-    <a href="https://wa.me/917835978857?text=I%20want%20to%20buy%20Meta%20Agency%20Ad%20Account" target="_blank" class="btn-whatsapp">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      MESSAGE ON WHATSAPP
-    </a>
-  </div>
+<div class="container">
+<p class="whatsapp-text">Ready to get started? Contact us on WhatsApp.</p>
+<a href="https://wa.me/917835978857?text=I%20want%20to%20buy%20Meta%20Agency%20Ad%20Account" target="_blank" class="btn-whatsapp">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+MESSAGE ON WHATSAPP
+</a>
+</div>
 </section>
 
 <!-- FOOTER -->
 <footer id="footer">
-  <div class="container">
-    <div class="footer-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-    </div>
-    <div class="footer-copy">&copy; 2025 ADMIZ AGENCY. All rights reserved.</div>
-  </div>
+<div class="container">
+<div class="footer-links">
+<a href="/privacy-policy.html">Privacy Policy</a>
+<a href="/terms-of-service.html">Terms of Service</a>
+</div>
+<div class="footer-copy">&copy; 2025 ADMIZ AGENCY. All rights reserved.</div>
+</div>
 </footer>
 
 <script>
@@ -172,22 +206,22 @@ const videoThumbnail=document.getElementById('video-thumbnail');
 const videoWrapper=document.getElementById('video-wrapper');
 
 videoThumbnail.addEventListener('click',function(){
-  const iframe=document.createElement('iframe');
-  iframe.src='https://www.youtube.com/embed/7hM2vMf0yJk?autoplay=1';
-  iframe.title='Meta Agency Ad Account Guide';
-  iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-  iframe.allowFullscreen=true;
-  videoWrapper.innerHTML='';
-  videoWrapper.appendChild(iframe);
+const iframe=document.createElement('iframe');
+iframe.src='https://www.youtube.com/embed/7hM2vMf0yJk?autoplay=1';
+iframe.title='Meta Agency Ad Account Guide';
+iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+iframe.allowFullscreen=true;
+videoWrapper.innerHTML='';
+videoWrapper.appendChild(iframe);
 });
 
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',function(e){
-    e.preventDefault();
-    const t=document.querySelector(this.getAttribute('href'));
-    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
-  });
+a.addEventListener('click',function(e){
+e.preventDefault();
+const t=document.querySelector(this.getAttribute('href'));
+if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+});
 });
 </script>
 </body>
