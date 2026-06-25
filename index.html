@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="ADMIZ AGENCY - Premium Meta Agency Ad Account solutions. Watch our video guide and contact us on WhatsApp.">
+<meta name="description" content="ADMIZ AGENCY - Premium Meta Agency Ad Account solutions. Order your ad account via Telegram.">
 <title>ADMIZ AGENCY - Meta Agency Ad Account</title>
 
 <!-- Meta Pixel Code -->
@@ -120,22 +120,6 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-
 .hero-sub{font-size:18px;color:var(--text2);margin-bottom:40px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.7;animation:fadeInUp .8s ease-out .2s both}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
-/* Video Section */
-#video-section{position:relative;padding:60px 0;z-index:1}
-.video-card{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:24px;padding:40px;box-shadow:0 20px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);position:relative;overflow:hidden;animation:fadeInUp .8s ease-out .3s both}
-.video-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(59,130,246,.05),transparent);pointer-events:none}
-.video-text{text-align:center;font-size:17px;color:var(--text2);margin-bottom:32px;font-weight:500;position:relative}
-.video-wrapper{position:relative;width:100%;padding-bottom:56.25%;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 16px 48px rgba(0,0,0,.4);position:relative}
-.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
-.video-thumbnail{position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;transition:transform .4s cubic-bezier(.4,0,.2,1)}
-.video-thumbnail:hover{transform:scale(1.02)}
-.thumbnail-img{width:100%;height:100%;object-fit:cover}
-.play-button-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3);transition:background .4s}
-.video-thumbnail:hover .play-button-overlay{background:rgba(0,0,0,.4)}
-.play-button{width:88px;height:88px;background:rgba(255,255,255,.95);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .4s cubic-bezier(.4,0,.2,1);box-shadow:0 12px 40px rgba(0,0,0,.5)}
-.play-button:hover{transform:scale(1.1);background:#fff;box-shadow:0 16px 48px rgba(59,130,246,.4)}
-.play-button svg{color:var(--blue);margin-left:6px}
-
 /* Telegram CTA */
 #telegram-cta{position:relative;padding:80px 0;text-align:center;z-index:1}
 .telegram-text{font-size:19px;color:var(--text2);margin-bottom:36px;font-weight:500;animation:fadeInUp .8s ease-out .4s both}
@@ -207,12 +191,6 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-
   .hero-sub{font-size:16px;margin-bottom:32px}
   .btn-primary,.btn-telegram{width:100%;justify-content:center;padding:16px 36px;font-size:15px}
   
-  #video-section{padding:48px 0}
-  .video-card{padding:28px;border-radius:20px}
-  .video-text{font-size:15px;margin-bottom:24px}
-  .play-button{width:72px;height:72px}
-  .play-button svg{width:40px;height:40px}
-  
   #telegram-cta{padding:60px 0}
   .telegram-text{font-size:16px;margin-bottom:28px}
   
@@ -239,11 +217,6 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-
   .hero-brand-glow{width:240px;height:240px}
   .hero-title{font-size:clamp(28px,9vw,40px)}
   .hero-sub{font-size:15px}
-  
-  .video-card{padding:20px}
-  .video-text{font-size:14px}
-  .play-button{width:64px;height:64px}
-  .play-button svg{width:36px;height:36px}
   
   .telegram-text{font-size:15px}
   
@@ -291,25 +264,6 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-
 </div>
 <h1 class="hero-title">META AGENCY<br><span class="gradient">AD ACCOUNT</span></h1>
 <p class="hero-sub">Order your Meta Agency Ad Account via Telegram. Supporting advertisers across multiple business categories.</p>
-</div>
-</section>
-
-<!-- VIDEO SECTION -->
-<section id="video-section">
-<div class="container">
-<div class="video-card">
-<p class="video-text">Please watch the complete video before contacting us.</p>
-<div class="video-wrapper" id="video-wrapper">
-<div class="video-thumbnail" id="video-thumbnail">
-<img src="https://img.youtube.com/vi/7hM2vMf0yJk/maxresdefault.jpg" alt="Meta Agency Ad Account Guide" class="thumbnail-img">
-<div class="play-button-overlay">
-<div class="play-button">
-<svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-</div>
-</div>
-</div>
-</div>
-</div>
 </div>
 </section>
 
@@ -407,20 +361,6 @@ MESSAGE ON TELEGRAM
 </footer>
 
 <script>
-// Video thumbnail click handler
-const videoThumbnail=document.getElementById('video-thumbnail');
-const videoWrapper=document.getElementById('video-wrapper');
-
-videoThumbnail.addEventListener('click',function(){
-const iframe=document.createElement('iframe');
-iframe.src='https://www.youtube.com/embed/7hM2vMf0yJk?autoplay=1';
-iframe.title='Meta Agency Ad Account Guide';
-iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-iframe.allowFullscreen=true;
-videoWrapper.innerHTML='';
-videoWrapper.appendChild(iframe);
-});
-
 // Telegram button click tracking
 const telegramBtn = document.getElementById('telegram-btn');
 if (telegramBtn) {
