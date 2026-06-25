@@ -16,13 +16,53 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '4001075203519150');
+fbq('init', '880661984478164');
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=4001075203519150&ev=PageView&noscript=1"
+src="https://www.facebook.com/tr?id=880661984478164&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+
+<!-- Meta Conversions API -->
+<script>
+(function() {
+  var PIXEL_ID = '880661984478164';
+  var ACCESS_TOKEN = 'EAAZALAeJ9SngBR8CZBMmHw9O6Ki1D24KUljmJ9KWalhggvJbBu9LWxQfnEHdsNMLyVIqClDCYsxaXYqdPea4rY72nrZB0w2AvjYPtiCNUToIqskgA3VIlLmGBXYm24KOGGpeZCFxpggxZB3l2RBwMJli8uk6yCLAT9XvKZBfXAZBroc7aWRXhRJWtRdXlQZDZD';
+  
+  window.sendCAPIEvent = function(eventName, eventData) {
+    var payload = {
+      data: [{
+        event_name: eventName,
+        event_time: Math.floor(Date.now() / 1000),
+        action_source: 'website',
+        event_source_url: window.location.href,
+        user_data: {
+          em: [], ph: [], ge: [], ct: [], st: [], zp: [], country: [], fbc: [], fbp: []
+        },
+        custom_data: eventData || {}
+      }],
+      access_token: ACCESS_TOKEN
+    };
+    
+    try {
+      var fbc = getCookie('_fbc');
+      var fbp = getCookie('_fbp');
+      if (fbc) payload.data[0].user_data.fbc.push(fbc);
+      if (fbp) payload.data[0].user_data.fbp.push(fbp);
+    } catch(e) {}
+    
+    console.log('[CAPI] Event:', eventName, payload);
+  };
+  
+  function getCookie(name) {
+    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? decodeURIComponent(match[2]) : null;
+  }
+  
+  sendCAPIEvent('PageView', { page_title: document.title, page_url: window.location.href });
+})();
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -35,7 +75,7 @@ src="https://www.facebook.com/tr?id=4001075203519150&ev=PageView&noscript=1"
   --glass:rgba(255,255,255,.03);--glass2:rgba(255,255,255,.05);
   --glass-border:rgba(255,255,255,.08);
   --text:#e8eaf0;--text2:#8b92a8;--text3:#555e78;
-  --green:#25D366;--green2:#128C7E;
+  --telegram:#0088cc;--telegram2:#229ED9;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -59,10 +99,10 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-
 .btn-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.1),transparent);opacity:0;transition:opacity .4s}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(59,130,246,.5),inset 0 1px 0 rgba(255,255,255,.15)}
 .btn-primary:hover::before{opacity:1}
-.btn-whatsapp{display:inline-flex;align-items:center;gap:12px;padding:20px 52px;background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;font-weight:600;font-size:17px;border-radius:60px;border:none;cursor:pointer;transition:all .4s cubic-bezier(.4,0,.2,1);box-shadow:0 4px 30px rgba(37,211,102,.3),inset 0 1px 0 rgba(255,255,255,.1);position:relative;overflow:hidden}
-.btn-whatsapp::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.1),transparent);opacity:0;transition:opacity .4s}
-.btn-whatsapp:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(37,211,102,.5),inset 0 1px 0 rgba(255,255,255,.15)}
-.btn-whatsapp:hover::before{opacity:1}
+.btn-telegram{display:inline-flex;align-items:center;gap:12px;padding:20px 52px;background:linear-gradient(135deg,var(--telegram),var(--telegram2));color:#fff;font-weight:600;font-size:17px;border-radius:60px;border:none;cursor:pointer;transition:all .4s cubic-bezier(.4,0,.2,1);box-shadow:0 4px 30px rgba(0,136,204,.3),inset 0 1px 0 rgba(255,255,255,.1);position:relative;overflow:hidden}
+.btn-telegram::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.1),transparent);opacity:0;transition:opacity .4s}
+.btn-telegram:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(0,136,204,.5),inset 0 1px 0 rgba(255,255,255,.15)}
+.btn-telegram:hover::before{opacity:1}
 
 /* Hero */
 #hero{position:relative;padding:100px 0 60px;text-align:center;z-index:1}
@@ -96,9 +136,9 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-
 .play-button:hover{transform:scale(1.1);background:#fff;box-shadow:0 16px 48px rgba(59,130,246,.4)}
 .play-button svg{color:var(--blue);margin-left:6px}
 
-/* WhatsApp CTA */
-#whatsapp-cta{position:relative;padding:80px 0;text-align:center;z-index:1}
-.whatsapp-text{font-size:19px;color:var(--text2);margin-bottom:36px;font-weight:500;animation:fadeInUp .8s ease-out .4s both}
+/* Telegram CTA */
+#telegram-cta{position:relative;padding:80px 0;text-align:center;z-index:1}
+.telegram-text{font-size:19px;color:var(--text2);margin-bottom:36px;font-weight:500;animation:fadeInUp .8s ease-out .4s both}
 
 /* Categories Section */
 #categories{position:relative;padding:100px 0;z-index:1;overflow:hidden}
@@ -165,7 +205,7 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-
   .hero-brand-glow{width:300px;height:300px}
   .hero-title{font-size:clamp(32px,8vw,48px);margin-bottom:20px}
   .hero-sub{font-size:16px;margin-bottom:32px}
-  .btn-primary,.btn-whatsapp{width:100%;justify-content:center;padding:16px 36px;font-size:15px}
+  .btn-primary,.btn-telegram{width:100%;justify-content:center;padding:16px 36px;font-size:15px}
   
   #video-section{padding:48px 0}
   .video-card{padding:28px;border-radius:20px}
@@ -173,8 +213,8 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-
   .play-button{width:72px;height:72px}
   .play-button svg{width:40px;height:40px}
   
-  #whatsapp-cta{padding:60px 0}
-  .whatsapp-text{font-size:16px;margin-bottom:28px}
+  #telegram-cta{padding:60px 0}
+  .telegram-text{font-size:16px;margin-bottom:28px}
   
   #categories{padding:80px 0}
   .categories-grid{grid-template-columns:repeat(2,1fr);gap:14px}
@@ -205,7 +245,7 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-
   .play-button{width:64px;height:64px}
   .play-button svg{width:36px;height:36px}
   
-  .whatsapp-text{font-size:15px}
+  .telegram-text{font-size:15px}
   
   .categories-grid{gap:12px}
   .category-card{padding:18px 12px}
@@ -250,11 +290,7 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-
 </div>
 </div>
 <h1 class="hero-title">META AGENCY<br><span class="gradient">AD ACCOUNT</span></h1>
-<p class="hero-sub">Watch our detailed video guide to learn how Meta Agency Ad Accounts work and how to get started.</p>
-<a href="#video-section" class="btn-primary">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-WATCH VIDEO
-</a>
+<p class="hero-sub">Order your Meta Agency Ad Account via Telegram. Supporting advertisers across multiple business categories.</p>
 </div>
 </section>
 
@@ -347,13 +383,13 @@ WATCH VIDEO
 </div>
 </section>
 
-<!-- WHATSAPP CTA -->
-<section id="whatsapp-cta">
+<!-- TELEGRAM CTA -->
+<section id="telegram-cta">
 <div class="container">
-<p class="whatsapp-text">Ready to learn more? Watch the complete video guide and then contact our team on WhatsApp for assistance with your business category and onboarding process.</p>
-<a href="https://wa.me/917835978857?text=I%20want%20to%20buy%20Meta%20Agency%20Ad%20Account" target="_blank" class="btn-whatsapp">
-<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-MESSAGE ON WHATSAPP
+<p class="telegram-text">Ready to order your Meta Agency Ad Account? Message us on Telegram to get started.</p>
+<a href="https://t.me/AdmizAgency" target="_blank" class="btn-telegram" id="telegram-btn">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+MESSAGE ON TELEGRAM
 </a>
 </div>
 </section>
@@ -362,6 +398,7 @@ MESSAGE ON WHATSAPP
 <footer id="footer">
 <div class="container">
 <div class="footer-links">
+<a href="https://t.me/AdmizAgency" target="_blank">Telegram</a>
 <a href="/privacy-policy.html">Privacy Policy</a>
 <a href="/terms-of-service.html">Terms of Service</a>
 </div>
@@ -383,6 +420,21 @@ iframe.allowFullscreen=true;
 videoWrapper.innerHTML='';
 videoWrapper.appendChild(iframe);
 });
+
+// Telegram button click tracking
+const telegramBtn = document.getElementById('telegram-btn');
+if (telegramBtn) {
+  telegramBtn.addEventListener('click', function() {
+    // Meta Pixel tracking
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Contact', {content_name: 'Meta Agency Ad Account', content_category: 'Ad Account Order'});
+    }
+    // CAPI tracking
+    if (typeof sendCAPIEvent !== 'undefined') {
+      sendCAPIEvent('Contact', {content_name: 'Meta Agency Ad Account', content_category: 'Ad Account Order'});
+    }
+  });
+}
 
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
